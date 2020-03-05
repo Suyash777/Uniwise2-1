@@ -1,13 +1,18 @@
 package com.example.uniwise;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.GridLayout;
+import android.widget.Toast;
+import android.widget.GridView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -16,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mNavDrawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,6 +29,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         setContentView(R.layout.activity_dashboard);
         NavigationView navigationView=findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mNavDrawer=findViewById(R.id.drawer_layout);
@@ -37,8 +44,48 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             navigationView.setCheckedItem(R.id.HomeTab);
         }
     }
+    private void setToggleEvent(GridLayout mainGrid) {
+        //Loop all child item of Main Grid
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            final CardView cardView = (CardView) mainGrid.getChildAt(i);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
+                        //Change background color
+                        cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
+                        Toast.makeText(DashboardActivity.this, "State : True", Toast.LENGTH_SHORT).show();
 
-    @Override
+                    } else {
+                        //Change background color
+                        cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                        Toast.makeText(DashboardActivity.this, "State : False", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+    private void setSingleEvent(GridLayout mainGrid) {
+        //Loop all child item of Main Grid
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            CardView cardView = (CardView) mainGrid.getChildAt(i);
+            final int finalI = i;
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(DashboardActivity.this,ActivityOne.class);
+                    intent.putExtra("info","This is activity from card item index  "+finalI);
+                    startActivity(intent);
+
+                }
+            });
+        }
+    }
+
+@Override
     public void onBackPressed() {
         if(mNavDrawer.isDrawerOpen(GravityCompat.START)){
             mNavDrawer.closeDrawer(GravityCompat.START);
@@ -76,3 +123,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         return true;
     }
 }
+
+
+
+
+
+
+
+
+
+
