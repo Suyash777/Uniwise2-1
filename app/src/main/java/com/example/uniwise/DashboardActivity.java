@@ -76,7 +76,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(DashboardActivity.this,ActivityOne.class);
+                    Intent intent = new Intent(DashboardActivity.this,SubjectActivity.class);
                     intent.putExtra("info","This is activity from card item index  "+finalI);
                     startActivity(intent);
 
