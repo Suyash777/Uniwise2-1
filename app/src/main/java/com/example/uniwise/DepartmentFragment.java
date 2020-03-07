@@ -10,8 +10,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class DepartmentFragment extends Fragment {
+    String pass="IT";
 
 
     public DepartmentFragment() {
@@ -23,6 +28,7 @@ public class DepartmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.fragment_department, container, false);
+
         CardView cdIT=(CardView)rootView.findViewById(R.id.itCard);
         CardView cdComp=(CardView)rootView.findViewById(R.id.compCard);
         CardView cdMech=(CardView)rootView.findViewById(R.id.mechanicalCard);
@@ -40,8 +46,11 @@ public class DepartmentFragment extends Fragment {
         cdIT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("ITkey","IT");
                 getActivity().startActivity(intent);
+
             }
         });
 
@@ -49,6 +58,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("COMPkey","COMP");
                 getActivity().startActivity(intent);
             }
         });
