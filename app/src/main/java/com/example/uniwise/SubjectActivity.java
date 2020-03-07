@@ -14,8 +14,6 @@ import java.util.ArrayList;
 
 public class SubjectActivity extends AppCompatActivity {
 
-    String[] ITsubjectList={"JAVA","CS","JS"};
-    String[] COMPsubjectList={"Android","NMA","JSP"};
 
 
 
@@ -25,26 +23,25 @@ public class SubjectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject);
 
-        Intent intent=getIntent();
-        String Subject=intent.getStringExtra("ITkey");
-        
+        Intent intent = getIntent();
+        String[] ITsubjectList = intent.getStringArrayExtra("ITkey");
+        String[] COMPsubjectList = intent.getStringArrayExtra("COMPkey");
+
+
         RecyclerView Subjects = findViewById(R.id.list_subs);
         Subjects.setLayoutManager(new LinearLayoutManager(this));
 
 
-
-        switch (Subject) {
-            case "IT":
             Subjects.setAdapter(new SubjectsAdapter(ITsubjectList));
-            break;
-            case "COMP":
-                Subjects.setAdapter(new SubjectsAdapter(COMPsubjectList));
-                break;
-        }
+
+
+
 
     }
 
-
-
-
 }
+
+
+
+
+
