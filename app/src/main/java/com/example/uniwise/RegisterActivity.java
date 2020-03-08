@@ -31,8 +31,6 @@ public class RegisterActivity extends AppCompatActivity {
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Toolbar toolbar=findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         mAuth= FirebaseAuth.getInstance();
         submit=(Button)findViewById(R.id.RSubmitBtn);
         user=mAuth.getCurrentUser();
