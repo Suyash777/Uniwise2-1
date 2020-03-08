@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:text="JAVA"
         android:paddingLeft="16dp"
         android:textSize="24sp"/>
