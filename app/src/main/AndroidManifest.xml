@@ -14,9 +14,10 @@
         <activity
             android:name=".DashboardActivity"
             android:theme="@style/AppTheme.Toolbar" />
-        <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.Toolbar" />
+
+        <activity android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.Toolbar"/>
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

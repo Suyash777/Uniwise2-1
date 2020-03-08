@@ -16,7 +16,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class DepartmentFragment extends Fragment {
-    String pass="IT";
+    String[] IT={"JAVA","CS","JS"};
+    String[] COMP={"Android","NMA","JSP"};
+
+
 
 
     public DepartmentFragment() {
@@ -48,7 +51,7 @@ public class DepartmentFragment extends Fragment {
             public void onClick(View arg0) {
 
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
-                intent.putExtra("ITkey","IT");
+                intent.putExtra("ITkey",IT);
                 getActivity().startActivity(intent);
 
             }
@@ -58,7 +61,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
-                intent.putExtra("COMPkey","COMP");
+                intent.putExtra("COMPkey",COMP);
                 getActivity().startActivity(intent);
             }
         });
