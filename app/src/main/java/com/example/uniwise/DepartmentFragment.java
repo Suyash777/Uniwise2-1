@@ -18,9 +18,16 @@ import java.util.ArrayList;
 public class DepartmentFragment extends Fragment {
     String[] IT={"JAVA","CS","JS"};
     String[] COMP={"Android","NMA","JSP"};
-
-
-
+    String[] MECH={"Power Engineering","Mechanics","CAD"};
+    String[] CIVIL={"civil1","civil2","civil3","civil4","civil5"};
+    String[] ELECTRICAL={"elec1","elec2","elec3","elec4","elec5"};
+    String[] ENTC={"entc1","entc2","entc3","entc4","entc5"};
+    String[] META={"Meta1","Meta2","Meta3","Meta4","Meta5"};
+    String[] DDGM={"DDGM1","DDGM2","DDGM3","DDGM4","DDGM5"};
+    String[] MATHS={"M1","M2","M3"};
+    String[] ENGLISH={"English","CMS"};
+    String[] PHYSICS={"Engg Physics"};
+    String[] CHEM={"Chemistry"};
 
     public DepartmentFragment() {
         // Required empty public constructor
@@ -28,7 +35,7 @@ public class DepartmentFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.fragment_department, container, false);
 
@@ -70,6 +77,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("MECHkey",MECH);
                 getActivity().startActivity(intent);
             }
         });
@@ -78,6 +86,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("CIVILkey",CIVIL);
                 getActivity().startActivity(intent);
             }
         });
@@ -86,6 +95,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("ELECkey",ELECTRICAL);
                 getActivity().startActivity(intent);
             }
         });
@@ -94,6 +104,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("ENTCkey",ENTC);
                 getActivity().startActivity(intent);
             }
         });
@@ -102,6 +113,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("METAkey",META);
                 getActivity().startActivity(intent);
             }
         });
@@ -110,6 +122,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("DDGMkey",DDGM);
                 getActivity().startActivity(intent);
             }
         });
@@ -118,6 +131,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("MATHkey",MATHS);
                 getActivity().startActivity(intent);
             }
         });
@@ -126,6 +140,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("ENGkey",ENGLISH);
                 getActivity().startActivity(intent);
             }
         });
@@ -134,6 +149,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("PHYSICSkey",PHYSICS);
                 getActivity().startActivity(intent);
             }
         });
@@ -142,6 +158,7 @@ public class DepartmentFragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 Intent intent=new Intent(getActivity(),SubjectActivity.class);
+                intent.putExtra("CHEMkey",CHEM);
                 getActivity().startActivity(intent);
             }
         });
