@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,16 +14,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText email,password;
+    EditText email,password,enrollment,username,phone;
     Button submit,goLogin;
     FirebaseAuth mAuth;
     FirebaseUser user;
+    DatabaseReference databaseUSers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,12 @@ public class RegisterActivity extends AppCompatActivity {
         submit=(Button)findViewById(R.id.RSubmitBtn);
         user=mAuth.getCurrentUser();
         email=findViewById(R.id.REmailTxt);
+        enrollment=findViewById(R.id.REnrollmentTxt);
+        username=findViewById(R.id.RUsernameTxt);
+        phone=findViewById(R.id.RPhoneTxt);
         password=findViewById(R.id.RPasswordTxt);
+        final FirebaseDatabase database=FirebaseDatabase.getInstance();
+        databaseUSers=database.getReference("users");
         goLogin=findViewById(R.id.RtoLSwitchBtn);
         goLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +57,32 @@ public class RegisterActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usnm,pass;
-                usnm=email.getText().toString();
+                String id=databaseUSers.push().getKey();
+                String mail,pass,enroll,usnm,phn;
+                mail=email.getText().toString();
+                enroll=enrollment.getText().toString();
+                usnm=username.getText().toString();
+                phn=phone.getText().toString();
                 pass=password.getText().toString();
-                registerNewUser(usnm,pass);
+                User user=new User(id,mail,pass,usnm,phn,enroll);
+                registerNewUser(mail,pass);
+                    storeUserOnFireBase(user);
+
+
+            }
+        });
+    }
+    private void storeUserOnFireBase(User user){
+        databaseUSers.child(user.id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(getApplicationContext(),"Saved...",Toast.LENGTH_LONG).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Something went wrong...",Toast.LENGTH_LONG).show();
             }
         });
     }
