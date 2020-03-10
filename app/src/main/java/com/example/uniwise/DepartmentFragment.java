@@ -16,7 +16,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class DepartmentFragment extends Fragment {
-    String[] IT={"JAVA","CS","JS"};
+    String[] IT={ "Applied Mathematics-1", "Applied Mathematics-2", "Basics Of IT",
+            "Computer Workshop", "Communication Skills", "Client Side Scripting Using Javascript",
+            "Computer Security", "Development Of Softskills-1", "Development Of Softskills-2",
+            "Digital Technics and Microprocessor", "Data Structure", "Data Communication and Networking",
+            "Database Administrator", "English", "Environmental Science", "Engineering Physics",
+            "Engineering Mathematics", "E-Commerce", "Fundamentals Of Electronics", "Fundamentals Of Electrical",
+            "Graphics and Gaming Technology", "Java Programming-1", "Java Programming-2", "Linux Basics", "Multimedia and Animation",
+            "Management Information System", "Mobile Application Development", "Network Management and Administration", "Operating System",
+            "Programming in C", "Programming using .Net", "Project and Seminar", "Relational Database Management", "Software Engineering",
+            "Software Testing","Server Side Scripting Using PHP", "Web Designing Using HTML"};
     String[] COMP={"Android","NMA","JSP"};
     String[] MECH={"Power Engineering","Mechanics","CAD"};
     String[] CIVIL={"civil1","civil2","civil3","civil4","civil5"};
