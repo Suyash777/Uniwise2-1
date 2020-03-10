@@ -7,15 +7,16 @@
     android:background="@drawable/gradient_bg"
     tools:context=".AboutFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is about our app"
-        android:textSize="36sp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="About: - • Why Uniwise exists?  •	Privacy Policies •	Impressum  1.	Why Uniwise exists? 	Uniwise is an application developed basically for Government Polytechnic, Pune to share knowledge among students. A vast amount of knowledge that would be valuable to many students is currently only available to a few – either locked in their heads, or only accessible to select groups. We want students to interact with each other using our application as a medium to collaborate and share their part for the benefits of rest of the students.  --(*You can add some sort of pictures here eg: - Student studying / just our apps logo*) –  The heart of our application (Uniwise) is the questions / queries that are asked by the students. It is a place where all the institutes students can have their logins, select their respective departments and ask questions, post answers in form of (audio, video, image, comment etc.). It will have contents related to the student’s curriculum, courses any many more this related to it. On the home page of the application you can also view all the currently going events and activities going on in the institute.    2.	Privacy Policies: - Uniwise recognizes that your privacy is very important, and we take it seriously. This Privacy Policy (“Privacy Policies”) describes our polices and procedures on the collection, use, and sharing of your personal information when you use the Uniwise platform.   The Information we collect: We collect information directly for the individuals and automatically from the Uniwise platform. Account and Profile Information: When you create an account and profile on the Uniwise platform, we collect you name, Phone number, email and other information you provide. Your name, photo, bio, and any other information that you choose add to your public-facing profile will be available for viewing by uses of the application. Your Content:    We collect the information and content that you post to the Uniwise platform, including your questions, answers, photos, videos and comments. Unless you have posted certain content anonymously, your content, date and time stamps, and all associated comments are publicly viewable to all users of the app. Communication: Your contact information will be used to communicate with you (via email, Phone no, from the Uniwise platform)  Delete/Deactivate Account:  --(*add this we have account deletion option in our app)--                                                                                         You can delete your account using the “Delete Account” option provided in the app.   3.	Impressum --(*This will include all the contact related stuffs; like email, phone no, and representatives (means our names) *)--  "
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
