@@ -62,8 +62,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="102dp"
-                        android:layout_height="100dp"
+                        android:layout_width="93dp"
+                        android:layout_height="83dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/it1" />
 
@@ -140,8 +140,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="94dp"
-                        android:layout_height="72dp"
+                        android:layout_width="75dp"
+                        android:layout_height="54dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/mechanical1" />
 
@@ -178,8 +178,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="104dp"
-                        android:layout_height="84dp"
+                        android:layout_width="87dp"
+                        android:layout_height="68dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/civil1" />
 
@@ -216,8 +216,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="95dp"
-                        android:layout_height="80dp"
+                        android:layout_width="77dp"
+                        android:layout_height="73dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/electrical1" />
 
@@ -253,8 +253,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="103dp"
-                        android:layout_height="83dp"
+                        android:layout_width="85dp"
+                        android:layout_height="62dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/etc1" />
 
