@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class SubjectActivity extends AppCompatActivity {
 
+    TextView dept;
     String[] empty={"Empty List","Empty List"};
 
 
@@ -36,44 +37,57 @@ public class SubjectActivity extends AppCompatActivity {
         String[] ENGsubjectList=intent.getStringArrayExtra("ENGkey");
         String[] PHYSICSsubjectList=intent.getStringArrayExtra("PHYSICSkey");
         String[] CHEMsubjectList=intent.getStringArrayExtra("CHEMkey");
+        dept=findViewById(R.id.title_dept);
 
         RecyclerView Subjects = findViewById(R.id.list_subs);
         Subjects.setLayoutManager(new LinearLayoutManager(this));
         if(ITsubjectList!=null) {
             Subjects.setAdapter(new SubjectsAdapter(ITsubjectList));
+            dept.setText("IT Department");
         }
         else if(COMPsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(COMPsubjectList));
+            dept.setText("Computer Department");
         }
         else if(MECHsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(MECHsubjectList));
+            dept.setText("Mechanical Department");
         }
         else if(CIVILsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(CIVILsubjectList));
+            dept.setText("Civil Department");
         }
         else if(ELECTRICALsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(ELECTRICALsubjectList));
+            dept.setText("Electrical Department");
         }
         else if(ENTCsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(ENTCsubjectList));
+            dept.setText("Electronics and Telecommunication Department");
         }
         else if(METAsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(METAsubjectList));
+            dept.setText("Metallurgy Department");
         }
         else if(DDGMsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(DDGMsubjectList));
+            dept.setText("Dress Designing and Garment Manufacturing Department");
         }
         else if(MATHsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(MATHsubjectList));
+            dept.setText("Mathematics Department");
         }
         else if(ENGsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(ENGsubjectList));
+            dept.setText("English Department");
         }
         else if(PHYSICSsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(PHYSICSsubjectList));
+            dept.setText("Physics Department");
         }
         else if(CHEMsubjectList!=null){
             Subjects.setAdapter(new SubjectsAdapter(CHEMsubjectList));
+            dept.setText("Chemistry Department");
         }
         else {
             Subjects.setAdapter(new SubjectsAdapter(empty));
